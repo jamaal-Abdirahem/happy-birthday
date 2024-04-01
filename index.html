@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Greeting</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: rgb(238, 174, 202);
+        background: radial-gradient(
+          circle,
+          rgba(238, 174, 202, 1) 0%,
+          rgba(148, 187, 233, 1) 100%
+        );
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #08aeea;
+        background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.082);
+        max-width: 400px;
+        width: 90%;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: white;
+      }
+
+      input[type="text"] {
+        width: calc(100% - 80px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        /* background-color: #4caf50; */
+        background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #output {
+        margin-top: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        color: white;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="enterName">Enter Your Name:</h2>
+      <input type="text" id="nameInput" />
+      <button onclick="displayGreeting()" id="submitButton">Submit</button>
+
+      <div id="output" class="hidden"></div>
+    </div>
+
+    <script>
+      function displayGreeting() {
+        var name = document.getElementById("nameInput").value;
+        var outputDiv = document.getElementById("output");
+        var greeting = document.createElement("p");
+        greeting.textContent = "Happy Birthday " + name + "!" + "🎂 🥳";
+        outputDiv.innerHTML = "";
+        outputDiv.appendChild(greeting);
+
+        // Hide the input and submit button
+        document.getElementById("nameInput").style.display = "none";
+        document.getElementById("submitButton").style.display = "none";
+        document.getElementById("enterName").style.display = "none";
+
+        // Show the output
+        outputDiv.classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
